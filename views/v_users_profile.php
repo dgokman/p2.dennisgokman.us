@@ -9,6 +9,8 @@ enctype="multipart/form-data">
 <input type="file" name="file" id="file"><br>
 <input type="submit" name="submit" value="Submit">
 </form>
+
+<img src="/uploads/<?=$_FILES["file"]["name"]?>"></img>
 </body>
 </html>
 
