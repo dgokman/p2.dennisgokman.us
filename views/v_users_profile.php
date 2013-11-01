@@ -1,6 +1,7 @@
 <h1>This is the profile of <?=$user->first_name?></h1>
 
-public function profile($user_name == NULL) {
+ 
+    public function profile($user_name == NULL) {
 
     /*
     If you look at _v_template you'll see it prints a $content variable in the <body>

@@ -31,10 +31,16 @@ class users_controller extends base_controller {
 
         # Dump out the results of POST to see what the form submitted
         $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
-        echo 'You\'re signed up';         
+        $to = "dennis.gokman@gmail.com";
+        $subject = "Welcome to Sweatr!";
+        $message = "Hello! Thank you for joining Sweatr. Now start posting and following!";
+        $from = "APP_EMAIL";
+        mail($to,$subject,$message,$from);
+        echo 'You\'re signed up and have received e-mail confirmation';  
+             
     }
     
-    public function login() {
+    public function login($error = NULL) {
 
     # Setup view
         $this->template->content = View::instance('v_users_login');
