@@ -34,8 +34,7 @@ class users_controller extends base_controller {
         $to = "dennis.gokman@gmail.com";
         $subject = "Welcome to Sweatr!";
         $message = "Hello! Thank you for joining Sweatr. Now start posting and following!";
-        $from = "APP_EMAIL";
-        mail($to,$subject,$message,$from);
+        mail($to,$subject,$message);
         echo 'You\'re signed up and have received e-mail confirmation';  
              
     }
