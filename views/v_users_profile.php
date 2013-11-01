@@ -11,7 +11,7 @@ enctype="multipart/form-data">
 </form>
 <?php 
 {
-echo "<img src=" . "'/uploads/" . $_FILES["file"]["name"] . "'>" . "</img>";
+echo "<img src=" . "'/uploads/" . $name . "'>" . "</img>";
 }
 ?>
 </body>
