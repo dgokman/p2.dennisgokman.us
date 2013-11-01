@@ -106,6 +106,7 @@ class users_controller extends base_controller {
     # Setup view
     $this->template->content = View::instance('v_users_profile');
     $this->template->title   = "Profile of".$this->user->first_name;
+    
 
     # Render template
     echo $this->template;
@@ -129,6 +130,22 @@ class users_controller extends base_controller {
     Router::redirect("/");
 
 }
+
+   public function p_upload() {
+   
+   if ($_FILES["file"]["error"] > 0)
+    {
+    echo "Error: " . $_FILES["file"]["error"] . "<br>";
+    }
+   else
+    {
+   echo "Upload: " . $_FILES["file"]["name"] . "<br>";
+   echo "Type: " . $_FILES["file"]["type"] . "<br>";
+   echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
+   echo "Stored in: " . $_FILES["file"]["tmp_name"];
+    }
+  }
+
 
 
 } # eoc
