@@ -31,7 +31,7 @@ class users_controller extends base_controller {
 
         # Dump out the results of POST to see what the form submitted
         $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
-        $to = "dennis.gokman@gmail.com";
+        $to = $_POST['email'];
         $subject = "Welcome to Sweatr!";
         $message = "Hello! Thank you for joining Sweatr. Now start posting and following!";
         mail($to,$subject,$message);
