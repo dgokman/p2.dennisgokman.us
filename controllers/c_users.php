@@ -1,6 +1,7 @@
 <?php
 class users_controller extends base_controller {
 
+
     public function __construct() {
         parent::__construct();
     } 
@@ -31,9 +32,11 @@ class users_controller extends base_controller {
 
         # Dump out the results of POST to see what the form submitted
         $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
+        
+        #Send e-mail upon registration
         $to = $_POST['email'];
         $subject = "Welcome to Sweatr!";
-        $message = "Hello! Thank you for joining Sweatr. Now start posting and following!";
+        $message = "Hello!" . $user->first_name . "Thank you for joining Sweatr. Now start posting and following!";
         mail($to,$subject,$message);
         echo 'You\'re signed up and have received e-mail confirmation';  
              
@@ -130,10 +133,11 @@ class users_controller extends base_controller {
     Router::redirect("/");
 
 }
-
+   #Allow image uploading
    public function p_upload() {
    $allowedExts = array("gif", "jpeg", "jpg", "png");
    $temp = explode(".", $_FILES["file"]["name"]);
+   $filename = $_FILES["file"]["name"];
    $extension = end($temp);
    if ((($_FILES["file"]["type"] == "image/gif")
    || ($_FILES["file"]["type"] == "image/jpeg")
@@ -164,14 +168,13 @@ class users_controller extends base_controller {
       move_uploaded_file($_FILES["file"]["tmp_name"],
       "uploads/" . $_FILES["file"]["name"]);
       echo "Stored in: " . "uploads/" . $_FILES["file"]["name"];
-     
       }
+     }
     }
-  }
-else
-  {
-  echo "Invalid file";
-  }
+     else
+      {
+     echo "Invalid file";
+      }
   
 
 }
