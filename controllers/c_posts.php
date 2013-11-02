@@ -6,7 +6,7 @@ class posts_controller extends base_controller {
 
         # Make sure user is logged in if they want to use anything in this controller
         if(!$this->user) {
-            die("Members only. <a href='/users/login'>Login</a>");
+            die("<link rel='stylesheet' type='text/css' href='../css/sample-app.css' /><p>Members only.</p> <a href='/users/login'>Login</a>");
         }
     }
 
@@ -35,7 +35,7 @@ class posts_controller extends base_controller {
         DB::instance(DB_NAME)->insert('posts', $_POST);
 
         # Quick and dirty feedback
-        echo "Your post has been added. <a href='/posts/add'>Add another</a>";
+        echo "<link rel='stylesheet' type='text/css' href='../css/sample-app.css' />" . "<p>Your post has been added.</p> <a href='/posts/add'>Add another</a><br><a href='../'>Back to Home</a>";
 
     }
     

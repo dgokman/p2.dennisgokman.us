@@ -108,7 +108,7 @@ class users_controller extends base_controller {
 
     # Setup view
     $this->template->content = View::instance('v_users_profile');
-    $this->template->title   = "Profile of".$this->user->first_name;
+    $this->template->title   = "Profile Page of". $this->user->first_name;
     
 
     # Render template
@@ -157,7 +157,7 @@ class users_controller extends base_controller {
     }
     else
     {
-    echo "You have succesfully uploaded a file" . "<br><a href='/users/profile'>Back to profile</a><br>";
+    echo "<link rel='stylesheet' type='text/css' href='../css/sample-app.css' />" . "<p>You have uploaded a picture</p>" . "<br><a href='/users/profile'>Back to profile</a><br>";
 
     #Check if file exists and save to uploads folder
     if (file_exists("uploads/" . $_FILES["file"]["name"]))
@@ -168,13 +168,16 @@ class users_controller extends base_controller {
       {
       move_uploaded_file($_FILES["file"]["tmp_name"],
       "uploads/" . $_FILES["file"]["name"]);
-      echo "Stored in: " . "uploads/" . $_FILES["file"]["name"];
+      
+      #Shows uploaded image
+      $url = "<img src='../uploads/" . $_FILES["file"]["name"] . "'></img>";
+      echo "<img src='../uploads/" . $_FILES["file"]["name"] . "'></img>";
       }
      }
     }
      else
       {
-     echo "Invalid file" . "<br><a href='/users/profile'>Back to profile</a><br>";
+     echo "<link rel='stylesheet' type='text/css' href='../css/sample-app.css' />" . "<p>Invalid file</p>" . "<br><a href='/users/profile'>Back to profile</a><br>";
       }
   
 
