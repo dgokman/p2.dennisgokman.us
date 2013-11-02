@@ -1,3 +1,4 @@
+
 <?php
 if ($_FILES["file"]["error"] > 0)
   {
@@ -5,6 +6,7 @@ if ($_FILES["file"]["error"] > 0)
   }
 else
   {
+  echo "You have succesfully uploaded a file" . "<a href='/profile'>Back to profile</a>"
   echo "Upload: " . $_FILES["file"]["name"] . "<br>";
   echo "Type: " . $_FILES["file"]["type"] . "<br>";
   echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";

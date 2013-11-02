@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="../css/sample-app.css" />
 <?php foreach($posts as $post): ?>
 
 <article>

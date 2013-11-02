@@ -1,0 +1,54 @@
+h1 {
+    font-family: Calibri;
+    color: #400000;
+    }
+
+label, p, time, input {
+    font-family: Calibri;
+    }
+    
+body {
+     background-color: beige;
+    }
+
+#follow, article, form {
+      border-style: outset;
+      border-color: silver;
+      margin: 1em;
+      padding: 1em;
+      position: relative;
+      margin-left:0%;
+      margin-right:80%;
+      font-family: Calibri;
+      }
+      
+#welcome {
+      border-style: outset;
+      border-color: silver;
+      margin: 1em;
+      padding: 1em;
+      position: relative;
+      margin-left:20%;
+      margin-right:20%;
+      font-family: Calibri;
+      font-size: 200%;
+      }
+
+a:link {
+        text-decoration:none;
+        font-family: Calibri;
+        margin: 0.3em;
+        padding: 0.3em;
+        }
+a:visited {
+        text-decoration:none;
+        font-family: Calibri;
+        }
+a:hover {
+        text-decoration:underline;
+        font-family: Calibri;
+        }
+a:active {
+        text-decoration:underline;
+        font-family: Calibri
+        }

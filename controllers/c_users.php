@@ -36,9 +36,9 @@ class users_controller extends base_controller {
         #Send e-mail upon registration
         $to = $_POST['email'];
         $subject = "Welcome to Sweatr!";
-        $message = "Hello!" . $user->first_name . "Thank you for joining Sweatr. Now start posting and following!";
+        $message = "Hello! Thank you for joining Sweatr. Now start posting and following!";
         mail($to,$subject,$message);
-        echo 'You\'re signed up and have received e-mail confirmation';  
+        echo 'You\'re signed up and have received e-mail confirmation' . '<br>' . '<a href="/users/login">Back to Sweatr</a>';  
              
     }
     
@@ -133,7 +133,10 @@ class users_controller extends base_controller {
     Router::redirect("/");
 
 }
+
+
    #Allow image uploading
+   
    public function p_upload() {
    $allowedExts = array("gif", "jpeg", "jpg", "png");
    $temp = explode(".", $_FILES["file"]["name"]);
@@ -154,11 +157,9 @@ class users_controller extends base_controller {
     }
     else
     {
-    echo "Upload: " . $_FILES["file"]["name"] . "<br>";
-    echo "Type: " . $_FILES["file"]["type"] . "<br>";
-    echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
-    echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
+    echo "You have succesfully uploaded a file" . "<br><a href='/users/profile'>Back to profile</a><br>";
 
+    #Check if file exists and save to uploads folder
     if (file_exists("uploads/" . $_FILES["file"]["name"]))
       {
       echo $_FILES["file"]["name"] . " already exists. ";
@@ -173,10 +174,10 @@ class users_controller extends base_controller {
     }
      else
       {
-     echo "Invalid file";
+     echo "Invalid file" . "<br><a href='/users/profile'>Back to profile</a><br>";
       }
   
 
-}
+  }
 
 } # eoc

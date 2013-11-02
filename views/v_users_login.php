@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="../css/sample-app.css" />
+<link rel="stylesheet" type="text/css" href="/css/sample-app.css" />
 <form method='POST' action='/users/p_login'>
 
     Email<br>

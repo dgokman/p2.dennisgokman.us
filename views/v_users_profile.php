@@ -1,6 +1,7 @@
 <html>
+<link rel="stylesheet" type="text/css" href="../css/sample-app.css" />
 <body>
-<h1>This is the profile of <?=$user->first_name?></h1>
+<h1>Profile Page for <?=$user->first_name?></h1>
 
 
 <form action="p_upload" method="post"
