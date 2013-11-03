@@ -33,6 +33,12 @@ class users_controller extends base_controller {
         # Dump out the results of POST to see what the form submitted
         $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
         
+        #Check that all fields have been entered
+        if (!$_POST['first_name'] || !$_POST['last_name'] || !$_POST['email'] || !$_POST['password'])
+         {
+        die("<link rel='stylesheet' type='text/css' href='../css/sample-app.css' />" . '<p>You did not complete all of the required fields</p>' . '<br>' . '<a href="/users/signup">Back to Sign Up</a>');
+          }
+        
         #Send e-mail upon registration
         $to = $_POST['email'];
         $subject = "Welcome to Sweatr!";
@@ -49,7 +55,7 @@ class users_controller extends base_controller {
         $this->template->title   = "Login";
         
     # Pass data to the view
-    $this->template->content->error = $error;
+        $this->template->content->error = $error;
 
     # Render template
         echo $this->template;
@@ -64,6 +70,12 @@ class users_controller extends base_controller {
 
     # Hash submitted password so we can compare it against one in the db
     $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
+    
+    #Check that all fields have been entered
+        if (!$_POST['email'] || !$_POST['password'])
+         {
+        Router::redirect("/users/login/error");
+          }
 
     # Search the db for this email and password
     # Retrieve the token if it's available
