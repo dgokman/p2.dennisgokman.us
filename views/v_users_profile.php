@@ -1,6 +1,6 @@
-<html>
+
 <link rel="stylesheet" type="text/css" href="../css/sample-app.css" />
-<body>
+
 <h1>Profile Page for <?=$user->first_name?></h1>
 
 
@@ -11,6 +11,5 @@ enctype="multipart/form-data">
 <input type="submit" name="submit" value="Submit">
 </form>
 
-</body>
-</html>
+
 

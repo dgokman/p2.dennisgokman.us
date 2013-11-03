@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="../css/sample-app.css" />
-<div id="follow"
+<div id="follow">
 <?php foreach($users as $user): ?>
 
     <!-- Print this user's name -->

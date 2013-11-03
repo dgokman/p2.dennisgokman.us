@@ -28,10 +28,10 @@ body {
       margin: 1em;
       padding: 1em;
       position: relative;
-      margin-left:20%;
-      margin-right:20%;
+      margin-left:0%;
+      margin-right:60%;
       font-family: Calibri;
-      font-size: 200%;
+      font-size: 100%;
       }
 
 a:link {
@@ -39,11 +39,14 @@ a:link {
         font-family: Calibri;
         margin: 0.3em;
         padding: 0.3em;
+        color: black;
         }
 a:visited {
         text-decoration:none;
         font-family: Calibri;
+        color: black;
         }
+
 a:hover {
         text-decoration:underline;
         font-family: Calibri;
@@ -51,4 +54,16 @@ a:hover {
 a:active {
         text-decoration:underline;
         font-family: Calibri
+        color: black;
         }
+
+
+#masthead {
+padding: 20px 0 0 0;
+overflow: hidden;
+background-image: url(/images/masthead.png);
+background-repeat: no-repeat;
+width: 900px;
+height: 30px;
+border: solid;
+}
