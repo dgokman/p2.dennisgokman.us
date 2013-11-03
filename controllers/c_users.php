@@ -38,7 +38,7 @@ class users_controller extends base_controller {
         $subject = "Welcome to Sweatr!";
         $message = "Hello! Thank you for joining Sweatr. Now start posting and following!";
         mail($to,$subject,$message);
-        echo 'You\'re signed up and have received e-mail confirmation' . '<br>' . '<a href="/users/login">Back to Sweatr</a>';  
+        echo "<link rel='stylesheet' type='text/css' href='../css/sample-app.css' />" . '<p>You\'re signed up and have received e-mail confirmation</p>' . '<br>' . '<a href="/users/login">Back to Sweatr</a>';  
              
     }
     
@@ -48,11 +48,12 @@ class users_controller extends base_controller {
         $this->template->content = View::instance('v_users_login');
         $this->template->title   = "Login";
         
-     # Pass data to the view
+    # Pass data to the view
     $this->template->content->error = $error;
 
     # Render template
         echo $this->template;
+    
 
     }
     
@@ -159,7 +160,7 @@ class users_controller extends base_controller {
     {
     echo "<link rel='stylesheet' type='text/css' href='../css/sample-app.css' />" . "<p>You have uploaded a picture</p>" . "<br><a href='/users/profile'>Back to profile</a><br>";
 
-    #Check if file exists and save to uploads folder
+   #Check if file exists and save to uploads folder
     if (file_exists("uploads/" . $_FILES["file"]["name"]))
       {
       echo $_FILES["file"]["name"] . " already exists. ";
@@ -169,12 +170,12 @@ class users_controller extends base_controller {
       move_uploaded_file($_FILES["file"]["tmp_name"],
       "uploads/" . $_FILES["file"]["name"]);
       
-      #Shows uploaded image
+    #Shows uploaded image
       $url = "<img src='../uploads/" . $_FILES["file"]["name"] . "'></img>";
       echo "<img src='../uploads/" . $_FILES["file"]["name"] . "'></img>";
+       }
       }
      }
-    }
      else
       {
      echo "<link rel='stylesheet' type='text/css' href='../css/sample-app.css' />" . "<p>Invalid file</p>" . "<br><a href='/users/profile'>Back to profile</a><br>";

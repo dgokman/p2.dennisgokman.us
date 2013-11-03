@@ -1,10 +1,12 @@
 h1 {
     font-family: Calibri;
     color: #400000;
+    font-size: 20px;
     }
 
 label, p, time, input {
     font-family: Calibri;
+    font-size: 18px;
     }
     
 body {
@@ -13,25 +15,26 @@ body {
 
 #follow, article, form {
       border-style: outset;
-      border-color: silver;
+      border-color: #5D5D5D;
       margin: 1em;
       padding: 1em;
       position: relative;
       margin-left:0%;
-      margin-right:80%;
+      margin-right:75%;
       font-family: Calibri;
+      font-size: 16px;
       }
       
 #welcome {
       border-style: outset;
-      border-color: silver;
+      border-color: #5D5D5D;
       margin: 1em;
       padding: 1em;
       position: relative;
       margin-left:0%;
       margin-right:60%;
       font-family: Calibri;
-      font-size: 100%;
+      font-size: 20px;
       }
 
 a:link {
@@ -40,21 +43,25 @@ a:link {
         margin: 0.3em;
         padding: 0.3em;
         color: black;
+        font-size: 16px;
         }
 a:visited {
         text-decoration:none;
         font-family: Calibri;
         color: black;
+        font-size: 16px;
         }
 
 a:hover {
         text-decoration:underline;
         font-family: Calibri;
+        font-size: 16px;
         }
 a:active {
         text-decoration:underline;
         font-family: Calibri
         color: black;
+        font-size: 16px;
         }
 
 
