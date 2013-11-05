@@ -14,11 +14,25 @@ class users_controller extends base_controller {
 
         # Render template
             echo $this->template;
+        
 
     }
 
     public function p_signup() {
-       
+         
+        # Search the db for input email
+        $q = "SELECT email 
+        FROM users 
+        WHERE email = '".$_POST['email']."'";
+        
+
+        $email = DB::instance(DB_NAME)->select_field($q);
+
+        # If we find a matching e-mail, signup has failed
+        if($email) {
+        die("<link rel='stylesheet' type='text/css' href='../css/sample-app.css' />" . '<p>Someone has signed up with that e-mail address</p>' . '<br>' . '<a href="/users/signup">Back to Sign Up</a>');
+          }
+        
         # More data we want stored with the user
         $_POST['created']  = Time::now();
         $_POST['modified'] = Time::now();
@@ -38,6 +52,8 @@ class users_controller extends base_controller {
          {
         die("<link rel='stylesheet' type='text/css' href='../css/sample-app.css' />" . '<p>You did not complete all of the required fields</p>' . '<br>' . '<a href="/users/signup">Back to Sign Up</a>');
           }
+        
+        
         
         #Send e-mail upon registration
         $to = $_POST['email'];
