@@ -9,3 +9,6 @@
     <input type='submit' value='New post'>
 
 </form> 
+
+<!-- Ajax results will go here -->
+<div id='results'></div>
