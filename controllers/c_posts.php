@@ -18,6 +18,7 @@ class posts_controller extends base_controller {
         
         # Load JS files
         $client_files_body = Array(
+        "'http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js",
         "/js/jquery.form.js",
         "/js/posts_add.js"
         );
